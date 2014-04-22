@@ -1,7 +1,7 @@
 Cicadidae
 =========
 
-Cicadidae is an intelligent, open-source IRC bot written in Python using https://bitbucket.org/jaraco/irc
+Cicadidae is an intelligent, open-source IRC bot written in Python using sockets!
 
 Version
 ----
