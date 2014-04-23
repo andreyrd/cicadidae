@@ -1,19 +1,17 @@
 {
-    "servers": {
-        "Freenode": {
-			"name": "Freenode",
-            "address": "irc.freenode.net",
-            "port": 6667,
-            "protocol": "tcp",
-            "timeout": 10,
+    "server": {
+        "name": "Freenode",
+        "address": "irc.freenode.net",
+        "port": 6667,
+        "protocol": "tcp",
+        "timeout": 10,
+        "password": "",
+        "identity": {
+            "ident": "bestbotever_jomp16",
+            "hostname": "bot",
+            "name": "bestbotever_jomp16",
             "password": "",
-            "identity": {
-				"ident": "bestbotever",
-				"hostname": "bot",
-                "name": "bestbotever",
-                "password": "",
-				"realname": "bot"
-            }
+            "realname": "bot"
         }
     },
     "channels": {
@@ -33,7 +31,7 @@
             "trigger": "@"
         },
         {
-            "trigger": "bestbotever"
+            "trigger": "bestbotever_jomp16"
         }
     ]
 }
