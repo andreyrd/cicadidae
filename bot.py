@@ -1,6 +1,7 @@
 import sys 
 import socket
 import threading
+import time
 import re
 
 def socketSend( Socket, String ):
@@ -51,6 +52,8 @@ class ServerThreads (threading.Thread):
             print("[BOT] " + "PRIVMSG %s :%s" % (Channel["name"], "I got 99 problems but connecting to IRC ain't one."))
 
         while True: #Max size of an IRC message (512) * the amount of bytes in a unicode string (4)
+            time.sleep(0.1)
+        
             Line = SocketAsFile.readline()
             
             if not Line:
@@ -60,8 +63,12 @@ class ServerThreads (threading.Thread):
             if MatchedObject:
                 socketSend(Socket, 'PONG %s\r\n' % MatchedObject.group())
                 print("[BOT] " + "PONG %s" % MatchedObject.group())
+            
+            MatchedObject2 = re.search(r'die', Line)
+            if MatchedObject2:
+                socketSend(Socket, 'QUIT :Fine, meanie >:(\r\n')
+                print("[BOT] " + "QUIT :Fine, meanie >:(")
+                break;
                 
             else:
                 print( '[%s] %s' % (self.Server["name"], Line) )
-                
-        thread.exit()
