@@ -4,10 +4,9 @@ import threading
 import time
 import re
 
-def socketSend( Socket, String ):
-    "coverts a string to send to a socket"
-    
-    Socket.send( String.encode() )
+from include import socketSend
+
+from modules.Utilities import plugin
     
 class ServerThreads (threading.Thread):
     def __init__(self, Config, Server, Channels):
@@ -66,9 +65,7 @@ class ServerThreads (threading.Thread):
             
             MatchedObject2 = re.search(r'die', Line)
             if MatchedObject2:
-                socketSend(Socket, 'QUIT :Fine, meanie >:(\r\n')
-                print("[BOT] " + "QUIT :Fine, meanie >:(")
-                break;
+                modules.Utilities.plugin.die('Fine, meanie >:(')
                 
             else:
                 print( '[%s] %s' % (self.Server["name"], Line) )

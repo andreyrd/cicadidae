@@ -1,4 +1,5 @@
-import bot
+from cicadidae import bot
+from cicadidae import include
 import json
 
 ConfigFile = open( "config.json", "r+" )
