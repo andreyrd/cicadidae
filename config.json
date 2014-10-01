@@ -1,0 +1,39 @@
+{
+    "servers": {
+        "Freenode": {
+			"name": "Freenode",
+            "address": "irc.freenode.net",
+            "port": 6667,
+            "protocol": "tcp",
+            "timeout": 10,
+            "password": "",
+            "identity": {
+				"ident": "bestbotever",
+				"hostname": "bot",
+                "name": "bestbotever",
+                "password": "",
+				"realname": "bot"
+            }
+        }
+    },
+    "channels": {
+        "Freenode": [
+            {
+                "name": "#wekeden",
+                "key": ""
+            },
+            {
+                "name": "#amagital",
+                "key": ""
+            }
+        ]
+    },
+    "commandTrigger": [
+        {
+            "trigger": "@"
+        },
+        {
+            "trigger": "bestbotever"
+        }
+    ]
+}
