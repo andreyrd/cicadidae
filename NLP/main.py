@@ -7,17 +7,19 @@ WordMemory.link("words.db",
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     letter varchar(1),
                     preceding_letter varchar(1),
+                    preceding_preceding_letter varchar(1),
                     count int
                 );
                 CREATE TABLE IF NOT EXISTS succeeding_letter_frequencies(
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     letter varchar(1),
                     succeeding_letter varchar(1),
+                    succeeding_succeeding_letter varchar(1),
                     count int
                 );
                 """)
 
-print("Welcome to rev 1 of the Learning Word Parser!")
+print("Welcome to rev 2 of the Learning Word Parser!")
 
 while (True):
     
@@ -27,7 +29,8 @@ while (True):
             Please select an option to continue:
             
                 (a) Add a word to the WordMemory.
-                (b) Quit
+                (b) Scan a string for words
+                (c) Quit
             """
     
     )
@@ -38,6 +41,9 @@ while (True):
         Mainmenu.doAddWords()
         
     elif( Choice == 'b' ):
+        Mainmenu.doScanString()
+    
+    elif( Choice == 'c' ):
         break
     
 WordMemory.delink()
