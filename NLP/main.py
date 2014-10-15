@@ -1,25 +1,25 @@
-import WordMemory
+import LetterLinkMemory
 import Mainmenu
 
-WordMemory.link("words.db", 
+LetterLinkMemory.link("LetterLinkMemory.db", 
                 """
                 CREATE TABLE IF NOT EXISTS preceding_letter_frequencies(
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    letter varchar(1),
-                    preceding_letter varchar(1),
-                    preceding_preceding_letter varchar(1),
+                    letter varchar(5),
+                    preceding_letter varchar(5),
+                    preceding_preceding_letter varchar(5),
                     count int
                 );
                 CREATE TABLE IF NOT EXISTS succeeding_letter_frequencies(
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    letter varchar(1),
-                    succeeding_letter varchar(1),
-                    succeeding_succeeding_letter varchar(1),
+                    letter varchar(5),
+                    succeeding_letter varchar(5),
+                    succeeding_succeeding_letter varchar(5),
                     count int
                 );
                 """)
 
-print("Welcome to rev 2 of the Learning Word Parser!")
+print("Welcome to rev 3 of the Learning Word Parser!")
 
 while (True):
     
@@ -46,4 +46,4 @@ while (True):
     elif( Choice == 'c' ):
         break
     
-WordMemory.delink()
+LetterLinkMemory.delink()
